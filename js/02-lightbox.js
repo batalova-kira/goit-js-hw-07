@@ -1,6 +1,7 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 const container = document.querySelector('.gallery');
+let lightbox;
 
 function createMarkup(arr) {
     return arr.map(({ preview, original, description }) => `
@@ -21,13 +22,11 @@ function handlerGalleryClick(evt) {
     }
     console.log(evt.target);
 
-    let lightbox = new SimpleLightbox('.gallery a', { 
-        captionType: 'alt',
-        captionsData: 'title',
+    lightbox = new SimpleLightbox('.gallery a', { 
+        captionsData: 'alt',
         captionPosition: 'bottom',
         captionDelay: 250,
      });
-    gallery.open();
+    lightbox.open();
 }
 
-console.log(galleryItems);
