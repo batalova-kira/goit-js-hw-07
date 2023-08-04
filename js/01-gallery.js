@@ -15,6 +15,7 @@ function createMarkup(arr) {
   </a>
 </li>`).join('')
 }
+
 container.insertAdjacentHTML('beforeend', createMarkup(galleryItems));
 container.addEventListener('click', handlerGalleryClick);
 
@@ -38,4 +39,3 @@ document.addEventListener('keydown', function (evt) {
 }
 });
 
-console.log(galleryItems);
