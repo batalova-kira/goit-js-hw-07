@@ -12,8 +12,8 @@ function createMarkup(arr) {
 </li>
     `).join('')
 }
-
 container.insertAdjacentHTML('beforeend', createMarkup(galleryItems));
+
 container.addEventListener('click', handlerGalleryClick);
 
 function handlerGalleryClick(evt) {
@@ -25,7 +25,6 @@ function handlerGalleryClick(evt) {
 
 lightbox = new SimpleLightbox('.gallery a', { 
         captionsData: 'alt',
-        captionPosition: 'bottom',
         captionDelay: 250,
-     });
+});
         lightbox.open();
