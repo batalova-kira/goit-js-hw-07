@@ -1,6 +1,7 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 const container = document.querySelector('.gallery');
+let instance; 
 
 function createMarkup(arr) {
     return arr.map(({preview, original, description}) => `<li class="gallery__item">
@@ -23,15 +24,17 @@ function handlerGalleryClick(evt) {
         return;
     }
     const imgLagre = evt.target.dataset.source;
-    const instance = basicLightbox.create(`<img src="${imgLagre}"/>
+    instance = basicLightbox.create(`<img src="${imgLagre}"/>
 `)
     instance.show();
 }
 
 document.addEventListener('keydown', function (evt) {
   if (evt.code === "Escape") {
-      evt.preventDefault();
-    instance.close();
+    evt.preventDefault();
+    if (instance) {
+      instance.close();
+    }
 }
 });
 
